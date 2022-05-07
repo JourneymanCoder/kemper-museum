@@ -11,14 +11,63 @@
     <nav>
       <ul class="site-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/current-exhibitions">Exhibitions</a></li>
-        <li><a href="/event-calendar-old">Programs</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Exhibitions<span class="caret" /></a>
+          <ul class="dropdown-menu">
+            <li><a>Current</a></li>
+            <li><a>Upcoming</a></li>
+            <li><a>Past</a></li>
+            <li><a>Permanent Collection</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Programs<span class="caret" /></a>
+          <ul class="dropdown-menu">
+            <li><a>Calendar</a></li>
+            <li><a>Youth & Families</a></li>
+            <li><a>Teens</a></li>
+            <li><a>Adults</a></li>
+            <li><a>Virtual</a></li>
+            <li><a>Tours</a></li>
+          </ul>
+        </li>
+
         <li><a href="/cafe">Café Sebastienne</a></li>
+
         <li><a href="http://shop.kemperart.org">Museum Shop</a></li>
-        <li><a href="/memberships">Support</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Support<span class="caret" /></a>
+          <ul class="dropdown-menu">
+            <li><a>Memberships</a></li>
+            <li><a>Donate Now</a></li>
+            <li><a>Legacy Society</a></li>
+            <li><a>Volunteer</a></li>
+            <li><a>Gala</a></li>
+          </ul>
+        </li>
+        </li>
       </ul>
     </nav>
   </header>
+
+  <script type="application/javascript">
+    for (const dropdown of document.querySelectorAll(".dropdown")) {
+      dropdown.addEventListener("focusout", () => {
+        console.log("onblur")
+        dropdown.classList.remove("is-open");
+      });
+
+      const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+
+      dropdownToggle.onclick = () => {
+        dropdown.classList.toggle("is-open");
+      }
+
+    }
+  </script>
 </body>
 
 </html>

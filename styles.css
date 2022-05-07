@@ -5,12 +5,13 @@
   list-style-type: none;
 }
 
-.site-nav li {
+.site-nav > li {
   display: block;
 }
 
-.site-nav li a {
+.site-nav > li > a {
   display: block;
+  position: relative;
 
   line-height: 20px;
 
@@ -30,4 +31,48 @@
   letter-spacing: 0px;
 
   border-top: 3px solid #000;
+
+  cursor: pointer;
+}
+
+.site-nav .caret {
+  position: absolute;
+  background-image: url("/img/caret-ie.png");
+  background-size: cover;
+  top: 8px;
+  right: 1px;
+  height: 7px;
+  width: 10px;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  color: white;
+  background-color: rgb(153, 153, 153);
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+}
+
+.dropdown.is-open .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu > li {
+  display: block;
+  margin: 0 15.9px;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+
+  font-family: neue-haas-unica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
 }
